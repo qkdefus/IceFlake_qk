@@ -1,0 +1,380 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{BD82A918-F080-463B-99C8-6BA8D7153333}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>IceFlake</RootNamespace>
+    <AssemblyName>IceFlake</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\Build\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Xna.Framework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86" />
+    <Reference Include="Microsoft.Xna.Framework.Graphics, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86" />
+    <Reference Include="SharpDX">
+      <HintPath>..\..\CosmicGW\trunk\CosmicGW\Resources\SharpDX.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpDX.D3DCompiler">
+      <HintPath>..\..\CosmicGW\trunk\CosmicGW\Resources\SharpDX.D3DCompiler.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpDX.Direct3D11">
+      <HintPath>..\..\CosmicGW\trunk\CosmicGW\Resources\SharpDX.Direct3D11.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpDX.Direct3D9">
+      <HintPath>..\..\CosmicGW\trunk\CosmicGW\Resources\SharpDX.Direct3D9.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpDX.DXGI">
+      <HintPath>..\..\CosmicGW\trunk\CosmicGW\Resources\SharpDX.DXGI.dll</HintPath>
+    </Reference>
+    <Reference Include="SlimDX, Version=4.0.13.43, Culture=neutral, PublicKeyToken=b1b0c32fd1ffe4f9, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\CosmicGW\trunk\CosmicGW\Resources\SlimDX.dll</HintPath>
+    </Reference>
+    <Reference Include="Squid">
+      <HintPath>..\Squid.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Client\API\API.cs" />
+    <Compile Include="Client\API\Auction.cs" />
+    <Compile Include="Client\API\Companion.cs" />
+    <Compile Include="Client\API\Frame.cs" />
+    <Compile Include="Client\API\Gossip.cs" />
+    <Compile Include="Client\API\Inventory.cs" />
+    <Compile Include="Client\API\Login.cs" />
+    <Compile Include="Client\API\Merchant.cs" />
+    <Compile Include="Client\API\Profession.cs" />
+    <Compile Include="Client\API\QuestGossip.cs" />
+    <Compile Include="Client\API\Talent.cs" />
+    <Compile Include="Client\API\Taxi.cs" />
+    <Compile Include="Client\API\TradeSkill.cs" />
+    <Compile Include="Client\API\Trainer.cs" />
+    <Compile Include="Client\Camera.cs" />
+    <Compile Include="Client\ClientServices.cs" />
+    <Compile Include="Client\Collections\AuraCollection.cs" />
+    <Compile Include="Client\Collections\SpellCollection.cs" />
+    <Compile Include="Client\Interface.cs" />
+    <Compile Include="Client\EndSceneExecute.cs" />
+    <Compile Include="Client\Events.cs" />
+    <Compile Include="Client\Helper.cs" />
+    <Compile Include="Client\Location.cs" />
+    <Compile Include="Client\LuaInterface.cs" />
+    <Compile Include="Client\Movement.cs" />
+    <Compile Include="Client\ObjectManager.cs" />
+    <Compile Include="Client\Objects\WoWAura.cs" />
+    <Compile Include="Client\Objects\WoWContainer.cs" />
+    <Compile Include="Client\Objects\WoWCorpse.cs" />
+    <Compile Include="Client\Objects\WoWDynamicObject.cs" />
+    <Compile Include="Client\Objects\WoWGameObject.cs" />
+    <Compile Include="Client\Objects\WoWItem.cs" />
+    <Compile Include="Client\Objects\WoWLocalPlayer.cs" />
+    <Compile Include="Client\Objects\WoWObject.cs" />
+    <Compile Include="Client\Objects\WoWPlayer.cs" />
+    <Compile Include="Client\Objects\WoWSpell.cs" />
+    <Compile Include="Client\Objects\WoWUnit.cs" />
+    <Compile Include="Client\Party.cs" />
+    <Compile Include="Client\Patchables\ClientDB.cs" />
+    <Compile Include="Client\Patchables\Constants.cs" />
+    <Compile Include="Client\Patchables\Descriptors.cs" />
+    <Compile Include="Client\Patchables\Pointers.cs" />
+    <Compile Include="Client\Patchables\Structures.cs" />
+    <Compile Include="Client\Pather.cs" />
+    <Compile Include="Client\Raid.cs" />
+    <Compile Include="Client\Scripts\Script.cs" />
+    <Compile Include="Client\Scripts\ScriptLogReader.cs" />
+    <Compile Include="Client\Scripts\ScriptManager.cs" />
+    <Compile Include="Client\Scripts\ScriptThread.cs" />
+    <Compile Include="Client\Scripts\SleepException.cs" />
+    <Compile Include="Client\Scripts\TerminateException.cs" />
+    <Compile Include="Client\World.cs" />
+    <Compile Include="Client\API\Chat.cs" />
+    <Compile Include="Client\WoWDB.cs" />
+    <Compile Include="Client\WoWScript.cs" />
+    <Compile Include="DirectX\IPulsable.cs" />
+    <Compile Include="DirectX\IResource.cs" />
+    <Compile Include="DirectX\Matrix3.cs" />
+    <Compile Include="DirectX\Rendering.cs" />
+    <Compile Include="DirectX\Squid\Framework\Game.cs" />
+    <Compile Include="DirectX\Squid\Framework\GameComponent.cs" />
+    <Compile Include="DirectX\Squid\Framework\GameTime.cs" />
+    <Compile Include="DirectX\Squid\Framework\NativeMethods.cs" />
+    <Compile Include="DirectX\Squid\GameGui.cs" />
+    <Compile Include="DirectX\Squid\InputManager.cs" />
+    <Compile Include="DirectX\Squid\MessageBox.cs" />
+    <Compile Include="DirectX\Squid\SampleDesktop.cs" />
+    <Compile Include="DirectX\Squid\SampleGame.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DirectX\Squid\SampleScene.cs" />
+    <Compile Include="DirectX\Squid\SampleWindow.cs" />
+    <Compile Include="DirectX\Squid\SquidSlimDX.cs" />
+    <Compile Include="Manager.cs" />
+    <Compile Include="DirectX\Direct3D.cs" />
+    <Compile Include="DirectX\EndSceneHandler.cs" />
+    <Compile Include="FileLogger.cs" />
+    <Compile Include="IceForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IceForm.Designer.cs">
+      <DependentUpon>IceForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Log.cs" />
+    <Compile Include="EntryPoint.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Runtime\AseemblyAnalyzer.cs" />
+    <Compile Include="Runtime\CallbackManager.cs" />
+    <Compile Include="Runtime\Extensions.cs" />
+    <Compile Include="Scripts\_QKDrawMenuSquid.cs" />
+    <Compile Include="Scripts\_QKDrawMeshScript.cs" />
+    <Compile Include="Scripts\_QKHackScripts.cs" />
+    <Compile Include="Scripts\_QKRadarScript.cs" />
+    <Compile Include="Scripts\_QKDrawUnitsScript.cs" />
+    <Compile Include="Scripts\DumpersScripts.cs" />
+    <Compile Include="Scripts\FishingScript.cs" />
+    <Compile Include="Scripts\GuildRecruitScript.cs" />
+    <Compile Include="Scripts\LoginScript.cs" />
+    <Compile Include="Scripts\TalentScript.cs" />
+    <Compile Include="Scripts\UITestScript.cs" />
+    <Compile Include="Scripts\VendorScript.cs" />
+    <Compile Include="Scripts\_QKSpeedScript.cs" />
+    <Compile Include="Scripts\_QKTestScript.cs" />
+    <EmbeddedResource Include="IceForm.resx">
+      <DependentUpon>IceForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="DirectX\Squid\Content\border.dds">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="DirectX\Squid\Content\button_default.dds">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="DirectX\Squid\Content\button_down.dds">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="DirectX\Squid\Content\button_hot.dds">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="DirectX\Squid\Content\checkbox_checked.dds">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="DirectX\Squid\Content\checkbox_checked_hot.dds">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="DirectX\Squid\Content\checkbox_default.dds">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="DirectX\Squid\Content\checkbox_down.dds">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="DirectX\Squid\Content\checkbox_hot.dds">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="DirectX\Squid\Content\combo_button_default.dds">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="DirectX\Squid\Content\combo_button_down.dds">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="DirectX\Squid\Content\combo_button_hot.dds">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="DirectX\Squid\Content\combo_default.dds">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="DirectX\Squid\Content\combo_down.dds">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="DirectX\Squid\Content\combo_hot.dds">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="DirectX\Squid\Content\frame.dds">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="DirectX\Squid\Content\handleNE.dds">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="DirectX\Squid\Content\handleNW.dds">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="DirectX\Squid\Content\hscrollUp_default.dds">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="DirectX\Squid\Content\hscrollUp_down.dds">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="DirectX\Squid\Content\hscrollUp_hot.dds">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="DirectX\Squid\Content\hscroll_button.dds">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="DirectX\Squid\Content\hscroll_button_down.dds">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="DirectX\Squid\Content\hscroll_button_hot.dds">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="DirectX\Squid\Content\hscroll_track.dds">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="DirectX\Squid\Content\input_default.dds">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="DirectX\Squid\Content\input_focused.dds">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="DirectX\Squid\Content\vscrollUp_default.dds">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="DirectX\Squid\Content\vscrollUp_down.dds">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="DirectX\Squid\Content\vscrollUp_hot.dds">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="DirectX\Squid\Content\vscroll_button.dds">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="DirectX\Squid\Content\vscroll_button_down.dds">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="DirectX\Squid\Content\vscroll_button_hot.dds">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="DirectX\Squid\Content\vscroll_track.dds">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="DirectX\Squid\Content\window.dds">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GreyMagic\GreyMagic.csproj">
+      <Project>{29bee34e-8d6a-47bf-96fa-aba46f6e9b66}</Project>
+      <Name>GreyMagic</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PPather\PPather.csproj">
+      <Project>{ec734271-9b29-4455-b191-41d25daa6abc}</Project>
+      <Name>PPather</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Client\Library\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DirectX\Squid\Content\Cursors\Arrow.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DirectX\Squid\Content\Cursors\Link.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DirectX\Squid\Content\Cursors\Move.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DirectX\Squid\Content\Cursors\Select.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DirectX\Squid\Content\Cursors\SizeNESW.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DirectX\Squid\Content\Cursors\SizeNS.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DirectX\Squid\Content\Cursors\SizeNWSE.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DirectX\Squid\Content\Cursors\SizeWE.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DirectX\Squid\Content\icons1.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <EmbeddedResource Include="DirectX\Squid\Content\image.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <Content Include="DirectX\Squid\Content\minimap.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DirectX\Squid\Content\paperdoll.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="DirectX\Squid\Content\SampleMap.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <Content Include="DirectX\Squid\Content\SampleMap.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="DirectX\Squid\Content\slimdx_logo.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <Content Include="DirectX\Squid\Content\TestImage.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DirectX\Squid\Content\weapon-icons.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
